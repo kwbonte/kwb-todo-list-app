@@ -1,1 +1,5 @@
 <p>todo-list-item works!</p>
+<div class="todo-list-item">
+  <input type="checkbox" [checked]="todo?.completed" (change)="(onChecked)" />
+  <span [class.completed]="todo?.completed">{{ todo?.text }}</span>
+</div>
