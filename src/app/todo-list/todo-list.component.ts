@@ -17,14 +17,23 @@ export class TodoListComponent {
   constructor() {}
 
   ngOnInit() {
-    this.todos = [];
+    this.todos = [
+      { text: 'Buy groceries', completed: false },
+      { text: 'Finish Angular project', completed: false },
+      { text: 'Call mom', completed: false },
+    ];
   }
 
   addTodo() {
     console.log('add selected');
+    if (this.newTodo.trim()) {
+      this.todos.push({ text: this.newTodo.trim(), completed: false });
+      this.newTodo = '';
+    }
   }
 
-  markCompleted(index: number) {
+  markComplete(index: number) {
     console.log('index ', index);
+    this.todos[index].completed = !this.todos[index].completed;
   }
 }
