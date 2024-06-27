@@ -13,7 +13,7 @@
   <div *ngFor="let todo of todos; let i = index">
     <app-todo-list-item
       [todo]="todo"
-      (markComplete)="markCompleted(i)"
+      (markComplete)="markComplete(i)"
     ></app-todo-list-item>
   </div>
 </div>
