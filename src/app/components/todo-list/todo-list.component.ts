@@ -2,7 +2,7 @@ import { Component } from '@angular/core';
 import { TodoListItemComponent } from '../todo-list-item/todo-list-item.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
-import { TodoService } from '../services/todo.service';
+import { TodoService } from '../../services/todo.service';
 
 @Component({
   selector: 'app-todo-list',
