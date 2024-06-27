@@ -2,6 +2,7 @@ import { Component } from '@angular/core';
 import { TodoListItemComponent } from '../todo-list-item/todo-list-item.component';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
+import { TodoService } from '../todo.service';
 
 @Component({
   selector: 'app-todo-list',
@@ -14,26 +15,20 @@ export class TodoListComponent {
   todos: any[] = [];
   newTodo: string = '';
 
-  constructor() {}
+  constructor(private todoService: TodoService) {}
 
   ngOnInit() {
-    this.todos = [
-      { text: 'Buy groceries', completed: false },
-      { text: 'Finish Angular project', completed: false },
-      { text: 'Call mom', completed: false },
-    ];
+    this.todos = this.todoService.getTodos();
   }
 
   addTodo() {
-    console.log('add selected');
     if (this.newTodo.trim()) {
-      this.todos.push({ text: this.newTodo.trim(), completed: false });
+      this.todoService.addTodo(this.newTodo.trim());
       this.newTodo = '';
     }
   }
 
   markComplete(index: number) {
-    console.log('index ', index);
-    this.todos[index].completed = !this.todos[index].completed;
+    this.todoService.markComplete(index);
   }
 }
