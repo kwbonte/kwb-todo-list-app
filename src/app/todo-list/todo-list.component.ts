@@ -31,4 +31,9 @@ export class TodoListComponent {
   markComplete(index: number) {
     this.todoService.markComplete(index);
   }
+
+  deleteItem(index: number) {
+    this.todoService.deleteItem(index);
+    this.todos = this.todoService.getTodos();
+  }
 }

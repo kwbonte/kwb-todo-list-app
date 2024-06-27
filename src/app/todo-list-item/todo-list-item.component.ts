@@ -11,9 +11,17 @@ import { Component, EventEmitter, Input, Output } from '@angular/core';
 export class TodoListItemComponent {
   @Input() todo: any;
   @Output() markComplete = new EventEmitter<void>();
+  @Output() deleteItem = new EventEmitter<void>();
+
+  onMarkComplete() {
+    this.markComplete.emit();
+  }
 
   onChecked() {
-    console.log('hey this works');
     this.markComplete.emit();
+  }
+
+  onDelete() {
+    this.deleteItem.emit();
   }
 }

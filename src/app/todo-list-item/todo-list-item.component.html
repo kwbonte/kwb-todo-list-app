@@ -1,4 +1,5 @@
 <div class="todo-list-item">
   <input type="checkbox" [checked]="todo?.completed" (change)="onChecked()" />
   <span [class.completed]="todo?.completed">{{ todo?.text }}</span>
+  <button (click)="onDelete()">X</button>
 </div>
