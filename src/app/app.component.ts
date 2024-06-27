@@ -9,6 +9,4 @@ import { CommonModule } from '@angular/common';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
-export class AppComponent {
-  title = 'kwb-todo-list-app';
-}
+export class AppComponent {}

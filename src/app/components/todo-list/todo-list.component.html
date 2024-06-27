@@ -1,14 +1,15 @@
 <div class="todo-list">
-  <h1>Todo List</h1>
-  <form (ngSubmit)="addTodo()">
+  <h1 class="title">Todo List</h1>
+  <form class="form" (ngSubmit)="addTodo()">
     <input
+      class="input"
       type="text"
       [(ngModel)]="newTodo"
       name="newTodo"
       placeholder="Add a new todo"
       required
     />
-    <button type="submit">Add</button>
+    <button class="add-button" type="submit">Add</button>
   </form>
   <div *ngFor="let todo of todos; let i = index">
     <app-todo-list-item
