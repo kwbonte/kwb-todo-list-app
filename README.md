@@ -16,5 +16,5 @@ A project displaying todo lists at the top of the screen with a centered add new
 
 ## Potential Improvements
 
-Add in a star for highest priority options
-Add in a date time
+- Add in a star for highest priority options
+- Add in a date time
